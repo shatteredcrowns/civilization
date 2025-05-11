@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server Rules</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f7f8fa; /* Light background */
+      color: #333; /* Dark text color */
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      background-color: #ffffff; /* White background for the container */
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      animation: fadeIn 1s ease-out;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #4caf50; /* Primary color: Green */
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      color: #777;
+    }
+
+    .rule-section {
+      margin-bottom: 40px;
+      padding: 30px;
+      background-color: #e8f5e9; /* Light Green background for sections */
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .rule-section:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .rule-section h2 {
+      font-size: 2.2rem;
+      color: #388e3c; /* Dark Green for headings */
+      margin-bottom: 20px;
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .rule-section h2::before {
+      content: '🏅';
+      position: absolute;
+      left: 0;
+      font-size: 2rem;
+      color: #388e3c;
+    }
+
+    .rule-section ul {
+      list-style-type: none;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .rule-section li {
+      margin-bottom: 15px;
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .rule-section li::before {
+      content: '✔️';
+      position: absolute;
+      left: 0;
+      color: #28a745; /* Green checkmark */
+      font-size: 1.2rem;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .flip-btn {
+      padding: 18px 35px;
+      background-color: #4caf50; /* Green button */
+      color: white;
+      font-size: 1.3rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .flip-btn:hover {
+      background-color: #388e3c; /* Darker green on hover */
+      transform: translateY(-2px);
+    }
+
+    /* Page Load Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Smooth Scroll Animation */
+    @keyframes scrollEffect {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .rule-section h2 {
+        font-size: 1.8rem;
+      }
+
+      .flip-btn {
+        font-size: 1.2rem;
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Server Rules & Nation Guidelines</h1>
+      <p>Everything you need to know to get started and stay within the community's rules.</p>
+    </header>
+
+    <!-- Server Rules Section -->
+    <div class="rule-section" style="animation: scrollEffect 0.7s ease-out;">
+      <h2>Server Rules</h2>
+      <ul>
+        <li>Respect all players and staff members at all times.</li>
+        <li>No offensive language, harassment, or discrimination.</li>
+        <li>Cheating or exploiting bugs will result in a permanent ban.</li>
+        <li>Griefing, stealing, or destroying other players' property is prohibited.</li>
+        <li>Always follow the server’s laws and play fairly.</li>
+      </ul>
+    </div>
+
+    <!-- Nation Rules Section -->
+    <div class="rule-section" style="animation: scrollEffect 1s ease-out;">
+      <h2>Nation Rules</h2>
+      <ul>
+        <li>Each nation must pass its rules through the parliament before being declared.</li>
+        <li>All nations need a written constitution, defining their rules and responsibilities.</li>
+        <li>At least 6-8 players are required to form a nation.</li>
+        <li>A nation must have the essential structures: town hall, courtroom, etc.</li>
+        <li>Members must agree to all rules before the nation is declared.</li>
+      </ul>
+    </div>
+
+    <!-- Bandit Rules Section -->
+    <div class="rule-section" style="animation: scrollEffect 1.3s ease-out;">
+      <h2>Bandit Rules</h2>
+      <ul>
+        <li>Bandits are lone players or small groups not affiliated with any nation.</li>
+        <li>Bandits can sabotage and wage wars but will face retaliation if caught.</li>
+        <li>Bandits can still earn achievements, titles, and participate in arena tournaments.</li>
+      </ul>
+    </div>
+    
+    <!-- Sabotage Rules Section -->
+    <div class="rule-section" style="animation: scrollEffect 1.5s ease-out;">
+      <h2>Sabotage Rules</h2>
+      <ul>
+        <li>Sabotage is a legal tactic to initiate conflicts between nations.</li>
+        <li>If caught, the opposing nation may retaliate, but it doesn’t count as a war declaration.</li>
+        <li>Only a formal war declaration can lead to a full-scale conflict between nations.</li>
+      </ul>
+    </div>
+
+    <!-- Back Button -->
+    <div class="btn-container">
+      <button class="flip-btn" onclick="goBack()">Back to Home</button>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      window.location.href = "index.html";  // Replace with your homepage URL or any desired page
+    }
+  </script>
+
+</body>
+
+</html>
