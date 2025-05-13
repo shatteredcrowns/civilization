@@ -553,3 +553,26 @@ footer {
   display: inline-block;
   font-size: 0.85rem;
 }
+
+
+
+
+
+button.btn {
+  all: unset; /* Reset all default button styles */
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #FF8C00;
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+button.btn:hover {
+  background-color: #E07B00;
+}
+
