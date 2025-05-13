@@ -56,3 +56,14 @@ function sendToDiscord(discordName, inGameTag, civilization, referralCode) {
         console.error("Error sending request:", error);
     });
 }
+
+
+//staff form button
+document.addEventListener("DOMContentLoaded", function () {
+    const staffBtn = document.getElementById("staffAppBtn");
+
+    staffBtn.addEventListener("click", function () {
+        window.location.href = "staffapp.html"; // Update path if needed
+    });
+});
+
