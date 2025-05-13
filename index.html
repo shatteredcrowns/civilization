@@ -28,6 +28,7 @@
     <a href="#ip-section">IP</a> <!-- Added IP Link -->
     <a href="#images">Screen Shots</a>
     <a href="rule.html">Rules</a>
+
   </nav>
 
   <!-- Server Highlights Section -->
@@ -97,15 +98,39 @@
     </div>
   </section>
 
-  <!-- Community Section -->
-  <section id="community" class="section community">
-    <h2>👥 Join the Battle</h2>
-    <p>Be a part of the realm and fight for the throne! The glory awaits you.</p>
-    <p > join us on our discord community</p>
-    <a href="https://discord.gg/gQAUsVde" class="btn">Join our Community</a>
+ <!-- Community Section -->
+<section id="community" class="section community">
+  <h2>👥 Join the Battle</h2>
+  <p>Be a part of the realm and fight for the throne! The glory awaits you.</p>
+  <p>Join us on our Discord community</p>
+  <a href="https://discord.gg/gQAUsVde" class="btn">Join our Community</a>
+  <button id="staffAppBtn" class="btn">Staff Application Form</button>
+</section>
+
+
+<!-- Contact Form Section -->
+<section class="section contact">
+    <h2>📬 Interested? Let us Know!</h2>
+    <form id="contact-form" class="contact-form">
+      <div class="field-container">
+        <input type="text" id="discord-name" name="discord-name" placeholder="Your Discord ID" required />
+      </div>
+      <div class="field-container">
+        <input type="text" id="ingame-tag" name="ingame-tag" placeholder="Your In-Game Tag" required />
+      </div>
+      <div class="field-container">
+        <input type="text" id="refferal" name="refferal" placeholder="Your referal code" required />
+      </div>
+      <div class="field-container">
+        <p>Select Your Civilization:</p>
+        <button type="button" class="civilization-btn" id="asisthan-btn" data-civilization="asisthan">Asisthan - Green Horizon</button>
+        <button type="button" class="civilization-btn" id="obsilon-btn" data-civilization="obsilon">Obsilon - Quiet Resolve</button>
+        <input type="hidden" id="civilization" name="civilization" required />
+      </div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+    <p id="form-message" class="form-message"></p>
   </section>
-
-
 
 
   <!-- Screenshot Gallery Section -->
@@ -174,7 +199,7 @@
     <div class="player-card">
       <img src="images/player1.jpg" alt="not found" class="player-img">
       <div class="player-info">
-        <h4>⚔️ Alicet</h4>
+        <h4>⚔️ Alice</h4>
         <p class="title-tag">🏆 Gladiator Champion</p>
         <p class="title-tag">🔮 Ashes to Empire</p>
       </div>
