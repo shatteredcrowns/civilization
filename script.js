@@ -32,7 +32,7 @@ document.getElementById("contact-form").addEventListener("submit", function(even
 
 // Function to send form data to Discord webhook
 function sendToDiscord(discordName, inGameTag, civilization, referralCode) {
-    const webhookUrl = "https://discord.com/api/webhooks/1370360515708059689/YAXWUGnucISjF--yqqlF2pU09q0_n9uGojnJe73tAR4MXeUjiUfzRobM3HSwL5zKyV9Z"; // Your Discord Webhook URL
+    const webhookUrl = "https://discord.com/api/webhooks/1370312491212476451/PHBiLu5yespJgkBwl53O_dyTKWRudctxbCgMWTfhR-JC4Yc_Uo0bEdW_DHwYcQmIQEQ9"; // Your Discord Webhook URL
     
     const payload = {
         content: `**New Contact Form Submission**\n**Discord Name:** ${discordName}\n**In-Game Tag:** ${inGameTag}\n**Civilization:** ${civilization}\n**Referral Code:** ${referralCode}`,
@@ -58,6 +58,9 @@ function sendToDiscord(discordName, inGameTag, civilization, referralCode) {
 }
 
 
+
+
+
 //staff form button
 document.addEventListener("DOMContentLoaded", function () {
     const staffBtn = document.getElementById("staffAppBtn");
@@ -66,4 +69,5 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "staffapp.html"; // Update path if needed
     });
 });
+
 
