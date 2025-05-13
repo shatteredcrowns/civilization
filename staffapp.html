@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Discord Staff Application</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #2c2f33;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #23272a;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #000000aa;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #7289da;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 5px;
+      background: #99aab5;
+      color: #000;
+    }
+
+    textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 16px;
+      background: #7289da;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #5b6eae;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Discord Staff Application</h2>
+  <form id="staffForm">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" required>
+
+    <label for="discord">Discord Tag (e.g., User#1234)</label>
+    <input type="text" id="discord" required>
+
+    <label for="age">Age</label>
+    <input type="number" id="age" required>
+
+    <label for="timezone">Your Timezone</label>
+    <input type="text" id="timezone" required>
+
+    <label for="availability">Availability (Hours per Week)</label>
+    <input type="text" id="availability" required>
+
+    <label for="experience">Do you have any staff/mod experience?</label>
+    <textarea id="experience" required></textarea>
+
+    <label for="motivation">Why do you want to join the staff team?</label>
+    <textarea id="motivation" required></textarea>
+
+    <button type="submit">Submit Application</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById("staffForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const webhookURL = "https://discord.com/api/webhooks/1371795783099355177/Fae6FMRLff-CFUU_-KfNlx89v3AitOedI6ONK0zr_UR_0BGZ4CvLbI_UzCymzKksUUa0"; // Replace with your Discord webhook URL
+
+    const data = {
+      username: "Staff Application Bot",
+      embeds: [{
+        title: "📋 New Staff Application",
+        color: 0x7289da,
+        fields: [
+          { name: "Name", value: document.getElementById("name").value || "N/A" },
+          { name: "Discord Tag", value: document.getElementById("discord").value || "N/A" },
+          { name: "Age", value: document.getElementById("age").value || "N/A" },
+          { name: "Timezone", value: document.getElementById("timezone").value || "N/A" },
+          { name: "Availability", value: document.getElementById("availability").value || "N/A" },
+          { name: "Experience", value: document.getElementById("experience").value || "N/A" },
+          { name: "Motivation", value: document.getElementById("motivation").value || "N/A" }
+        ],
+        timestamp: new Date().toISOString()
+      }]
+    };
+
+    try {
+      const response = await fetch(webhookURL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        alert("✅ Your application was submitted successfully!");
+        document.getElementById("staffForm").reset();
+      } else {
+        alert("❌ There was an error submitting your application.");
+      }
+    } catch (err) {
+      alert("❌ Failed to connect to Discord webhook.");
+    }
+  });
+</script>
+
+</body>
+</html>
