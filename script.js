@@ -32,7 +32,7 @@ document.getElementById("contact-form").addEventListener("submit", function(even
 
 // Function to send form data to Discord webhook
 function sendToDiscord(discordName, inGameTag, civilization, referralCode) {
-    const webhookUrl = "https://discord.com/api/webhooks/1372986494028877955/6_cCsiAl_lywtXY-eqlsdYHyRNjxAMys54UT4Zi-_uaBpIsqnm8izlHdU7uGtRAgxNg7"; // Your Discord Webhook URL
+    const webhookUrl = "https://discord.com/api/webhooks/1373199241224126464/OSJieu4MXUvuI7AxOX1Q_LS1XQWgHVNfi2pTN7xQpYXpwYismKj-r_exe6rlkHBrGkjD"; // Your Discord Webhook URL
     
     const payload = {
         content: `**New Contact Form Submission**\n**Discord Name:** ${discordName}\n**In-Game Tag:** ${inGameTag}\n**Civilization:** ${civilization}\n**Referral Code:** ${referralCode}`,
