@@ -1,73 +1,95 @@
-// Add event listeners to the civilization buttons
-document.getElementById("asisthan-btn").addEventListener("click", function() {
-    document.getElementById("civilization").value = "asisthan"; // Set the civilization value
+// Cooldown timer (1 minute between submissions)
+let lastSubmitTime = 0;
+
+// Prevent multiple rapid submissions
+let isSubmitting = false;
+
+// Civilization buttons
+document.getElementById("asisthan-btn").addEventListener("click", function () {
+    document.getElementById("civilization").value = "asisthan";
     document.getElementById("form-message").innerHTML = "You selected Asisthan - Green Horizon.";
 });
 
-document.getElementById("obsilon-btn").addEventListener("click", function() {
-    document.getElementById("civilization").value = "obsilon"; // Set the civilization value
+document.getElementById("obsilon-btn").addEventListener("click", function () {
+    document.getElementById("civilization").value = "obsilon";
     document.getElementById("form-message").innerHTML = "You selected Obsilon - Quiet Resolve.";
 });
 
-document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent the form from submitting the default way
+// Form submission
+document.getElementById("contact-form").addEventListener("submit", function (event) {
+    event.preventDefault();
 
-    let discordName = document.getElementById("discord-name").value;
-    let inGameTag = document.getElementById("ingame-tag").value;
-    let civilization = document.getElementById("civilization").value;
-    let referralCode = document.getElementById("refferal").value; // Assuming the input field has id="refferal"
+    const now = Date.now();
+    const cooldown = 120 * 1000; // 120 seconds
+
+    if (now - lastSubmitTime < cooldown) {
+        document.getElementById("form-message").innerHTML = "Your details were recorded. Please do not spam.";
+        return;
+    }
+
+    if (isSubmitting) return;
+
+    const discordName = document.getElementById("discord-name").value.trim();
+    const inGameTag = document.getElementById("ingame-tag").value.trim();
+    const civilization = document.getElementById("civilization").value.trim();
+    const referralCode = document.getElementById("refferal").value.trim();
 
     if (discordName && inGameTag && civilization && referralCode) {
+        isSubmitting = true;
+        lastSubmitTime = now;
+
         document.getElementById("form-message").innerHTML = "Thank you, " + discordName + "! We'll reach out to you soon!";
-        
-        // Send the form data to Discord Webhook
+
         sendToDiscord(discordName, inGameTag, civilization, referralCode);
+
+        // Reset form
+        document.getElementById("contact-form").reset();
+        document.getElementById("civilization").value = ""; // Reset civilization selection
     } else {
         document.getElementById("form-message").innerHTML = "Please fill in all fields.";
     }
 
-    // Clear the form fields
-    document.getElementById("contact-form").reset();
+    setTimeout(() => {
+        isSubmitting = false;
+    }, 1000); // re-enable submit quickly in case cooldown didn't trigger
 });
 
-// Function to send form data to Discord webhook
+// Send data to Discord webhook
 function sendToDiscord(discordName, inGameTag, civilization, referralCode) {
-    const webhookUrl = "https://discord.com/api/webhooks/1373932795721814026/TTCt_ev3M9gW0LwxJ39S1m6RWJ7e1I1WljbpQgsvLfsoT-_Q0GqUeOP78TparIEH2NRo"; // Your Discord Webhook URL
-    
+    const webhookUrl = "https://discord.com/api/webhooks/1374075800780935208/617TwsEtC7P-5U-4VGO0Hq5UfjjcPCgHD-gXL1RYlYuZvxeWRDJDlxmfQbXVD1Azu8HV";
+
     const payload = {
-        content: `**New Contact Form Submission**\n**Discord Name:** ${discordName}\n**In-Game Tag:** ${inGameTag}\n**Civilization:** ${civilization}\n**Referral Code:** ${referralCode}`,
+        content: `**New Registration Submission**\n**Discord Name:** ${discordName}\n**In-Game Tag:** ${inGameTag}\n**Civilization:** ${civilization}\n**Referral Code:** ${referralCode}`,
     };
-    
+
     fetch(webhookUrl, {
-        method: 'POST',
+        method: "POST",
         headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
         },
         body: JSON.stringify(payload),
     })
-    .then(response => {
-        if (response.ok) {
-            console.log("Message sent to Discord!");
-        } else {
-            console.error("Error sending message to Discord:", response);
-        }
-    })
-    .catch(error => {
-        console.error("Error sending request:", error);
-    });
+        .then(response => {
+            if (response.ok) {
+                console.log("✅ Message sent to Discord!");
+            } else {
+                console.error("❌ Failed to send message:", response);
+                document.getElementById("form-message").innerHTML = "There was an error submitting your form.";
+            }
+        })
+        .catch(error => {
+            console.error("❌ Fetch error:", error);
+            document.getElementById("form-message").innerHTML = "Network error occurred.";
+        });
 }
 
-
-
-
-
-//staff form button
+// Staff button
 document.addEventListener("DOMContentLoaded", function () {
     const staffBtn = document.getElementById("staffAppBtn");
 
-    staffBtn.addEventListener("click", function () {
-        window.location.href = "staffapp.html"; // Update path if needed
-    });
+    if (staffBtn) {
+        staffBtn.addEventListener("click", function () {
+            window.location.href = "staffapp.html";
+        });
+    }
 });
-
-
