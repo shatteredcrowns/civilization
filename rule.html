@@ -172,6 +172,7 @@
   </style>
 </head>
 
+<!-- Replace everything inside <body>...</body> with the following -->
 <body>
 
   <div class="container">
@@ -180,32 +181,91 @@
       <p>Everything you need to know to get started and stay within the community's rules.</p>
     </header>
 
-    <!-- Server Rules Section -->
+    <!-- General Fair Play -->
+    <div class="rule-section" style="animation: scrollEffect 0.5s ease-out;">
+      <h2>Play Fair - No Cheating or Exploits</h2>
+      <ul>
+        <li>No hacking, cheating, X-ray, duping, or AI bots for mining.</li>
+      </ul>
+    </div>
+
+    <!-- Combat Rules -->
     <div class="rule-section" style="animation: scrollEffect 0.7s ease-out;">
-      <h2>Server Rules</h2>
+      <h2>Combat Rules</h2>
       <ul>
-        <li>Respect all players and staff members at all times.</li>
-        <li>No offensive language, harassment, or discrimination.</li>
-        <li>Cheating or exploiting bugs will result in a permanent ban.</li>
-        <li>Griefing, stealing, or destroying other players' property is prohibited.</li>
-        <li>Always follow the server’s laws and play fairly.</li>
+        <li>No Elytra or Riptide Tridents in combat.</li>
+        <li>No End Crystals, Respawn Anchors, or Bed Bombing in combat or PvP.</li>
+        <li>Do not enter spawn while in combat.</li>
+        <li>No farming kills on friends or other players.</li>
       </ul>
     </div>
 
-    <!-- Nation Rules Section -->
-    <div class="rule-section" style="animation: scrollEffect 1s ease-out;">
-      <h2>Nation Rules</h2>
+    <!-- Spawn Rules -->
+    <div class="rule-section" style="animation: scrollEffect 0.9s ease-out;">
+      <h2>Spawn Rules</h2>
       <ul>
-        <li>Each nation must pass its rules through the parliament before being declared.</li>
-        <li>All nations need a written constitution, defining their rules and responsibilities.</li>
-        <li>At least 6-8 players are required to form a nation.</li>
-        <li>A nation must have the essential structures: town hall, courtroom, etc.</li>
-        <li>Members must agree to all rules before the nation is declared.</li>
+        <li>No killing at spawn.</li>
+        <li>Do not destroy or build anything ugly at spawn.</li>
       </ul>
     </div>
 
-    <!-- Bandit Rules Section -->
+    <!-- Enchantment & Item Limits -->
+    <div class="rule-section" style="animation: scrollEffect 1.1s ease-out;">
+      <h2>Enchantment & Item Limits</h2>
+      <ul>
+        <li>Protection 3 (III) max.</li>
+        <li>Sharpness 4 (IV) max.</li>
+        <li>Power 3 (III) max.</li>
+        <li>Ender Pearls cooldown: 7 seconds.</li>
+        <li>No Netherite armor or tools (except pickaxe, hoe, and shovel).</li>
+        <li>Only Tier 1 potions allowed.</li>
+        <li>Thorns enchantment fully banned.</li>
+        <li>The mace is uncraftable and unobtainable.</li>
+      </ul>
+    </div>
+
+    <!-- Mods & Allowed Features -->
     <div class="rule-section" style="animation: scrollEffect 1.3s ease-out;">
+      <h2>Mods & Allowed Features</h2>
+      <ul>
+        <li><strong>Banned:</strong> Freecam, Replay Mod (for locating players), Fast Place, Mini Map, Health Indicator mods</li>
+        <li><strong>Allowed:</strong> Waypoints and World Map from mods</li>
+      </ul>
+    </div>
+
+    <!-- World Border -->
+    <div class="rule-section" style="animation: scrollEffect 1.4s ease-out;">
+      <h2>World Border</h2>
+      <ul>
+        <li>World border is 4.2k by 4.2k.</li>
+      </ul>
+    </div>
+
+    <!-- Chat & Behaviour -->
+    <div class="rule-section" style="animation: scrollEffect 1.5s ease-out;">
+      <h2>Chat & Behaviour</h2>
+      <ul>
+        <li>No spamming (repeating the same message more than 6 times).</li>
+        <li>No alt accounts or sharing your account.</li>
+        <li>No harassment or simping — respect others’ boundaries.</li>
+      </ul>
+    </div>
+
+    <!-- Civilization Rules -->
+    <div class="rule-section" style="animation: scrollEffect 1.6s ease-out;">
+      <h2>Civilization Rules</h2>
+      <ul>
+        <li>You need 6 to 8 members to start a civilization.</li>
+        <li>If your group has fewer than 6 members or any member is inactive for 7 days or more, your civilization will be disbanded.</li>
+        <li>There are 2 pre-built civilizations with ready structures.</li>
+        <li>Pre-built civilizations do not have to pay any maintenance fees.</li>
+        <li>Custom civilizations can be built anywhere with no pre-built structures.</li>
+        <li>Custom civilizations must pay a daily maintenance fee to stay active.</li>
+      </ul>
+    </div>
+
+    <!-- Bandit Rules -->
+    <div class="rule-section" style="animation: scrollEffect 1.7s ease-out;">
       <h2>Bandit Rules</h2>
       <ul>
         <li>Bandits are lone players or small groups not affiliated with any nation.</li>
@@ -213,9 +273,9 @@
         <li>Bandits can still earn achievements, titles, and participate in arena tournaments.</li>
       </ul>
     </div>
-    
-    <!-- Sabotage Rules Section -->
-    <div class="rule-section" style="animation: scrollEffect 1.5s ease-out;">
+
+    <!-- Sabotage Rules -->
+    <div class="rule-section" style="animation: scrollEffect 1.8s ease-out;">
       <h2>Sabotage Rules</h2>
       <ul>
         <li>Sabotage is a legal tactic to initiate conflicts between nations.</li>
@@ -224,7 +284,7 @@
       </ul>
     </div>
 
-    <!-- Back Button -->
+    <!-- Footer Button -->
     <div class="btn-container">
       <button class="flip-btn" onclick="goBack()">Back to Home</button>
     </div>
@@ -232,10 +292,11 @@
 
   <script>
     function goBack() {
-      window.location.href = "index.html";  // Replace with your homepage URL or any desired page
+      window.location.href = "index.html";
     }
   </script>
 
 </body>
+
 
 </html>
